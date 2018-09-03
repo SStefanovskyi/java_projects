@@ -4,60 +4,66 @@ public class Main {
     static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        int num1 = getInt();
-        int num2 = getInt();
+        double num1 = getDouble();
+        double num2 = getDouble();
         char operation = getOperation();
-        int result = calc(num1, num2, operation);
-        System.out.println("Результат операции: " + result);
+        double result = calc(num1, num2, operation);
+        System.out.println("Operation result: " + result);
     }
 
-    public static int getInt(){
-        System.out.println("Введите число:");
-        int num;
-        if(scanner.hasNextInt()){
-            num = scanner.nextInt();
+    public static double getDouble(){
+        System.out.println("Enter the number: ");
+        double num;
+
+        if(scanner.hasNextDouble()){
+            num = scanner.nextDouble();
         }
         else{
-            System.out.println("Вы допустили ошибку при вводе числа. Попробуйте снова.");
-            scanner.next(); //рекурсія
-            num = getInt();
+            System.out.println("You made a mistake while typing a number. Try again.");
+            scanner.next();                     // recursion
+            num = getDouble();
         }
+
         return num;
     }
 
     public static char getOperation(){
-        System.out.println("Введите операцию");
+        System.out.println("Enter the operation: ");
         char operation;
+
         if(scanner.hasNext()){
             operation = scanner.next().charAt(0);
         }
         else {
-            System.out.println("Вы допустили ошибку при вводе операции. Попробуйте снова.");
-            scanner.next();     //рекурсія
+            System.out.println("You made a mistake when entering an operation. Try again.");
+            scanner.next();                      // recursion
             operation = getOperation();
         }
+
         return operation;
     }
 
-    public static int calc(int num1, int num2, char operation){
-        int result;
+    public static double calc(double num1, double num2, char operation){
+        double result;
+
         switch(operation){
             case '+':
-                result = num1+num2;
+                result = num1 + num2;
                 break;
             case '-':
-                result = num1-num2;
+                result = num1 - num2;
                 break;
             case '*':
-                result = num1*num2;
+                result = num1 * num2;
                 break;
             case '/':
-                result = num1/num2;
+                result = num1 / num2;
                 break;
             default:
-                System.out.println("Операция не распознана. Повторите ввод.");
-                result = calc(num1, num2, getOperation());  //рекурсія
+                System.out.println("The operation is not recognized. Repeat input.");
+                result = calc(num1, num2, getOperation());                   // recursion
         }
+
         return result;
     }
 }
