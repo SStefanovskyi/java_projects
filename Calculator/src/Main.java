@@ -11,14 +11,13 @@ public class Main {
         System.out.println("Operation result: " + result);
     }
 
-    public static double getDouble(){
+    public static double getDouble() {
         System.out.println("Enter the number: ");
         double num;
 
-        if(scanner.hasNextDouble()){
+        if (scanner.hasNextDouble()) {
             num = scanner.nextDouble();
-        }
-        else{
+        } else {
             System.out.println("You made a mistake while typing a number. Try again.");
             scanner.next();                     // recursion
             num = getDouble();
@@ -27,14 +26,13 @@ public class Main {
         return num;
     }
 
-    public static char getOperation(){
+    public static char getOperation() {
         System.out.println("Enter the operation: ");
         char operation;
 
-        if(scanner.hasNext()){
+        if (scanner.hasNext()) {
             operation = scanner.next().charAt(0);
-        }
-        else {
+        } else {
             System.out.println("You made a mistake when entering an operation. Try again.");
             scanner.next();                      // recursion
             operation = getOperation();
@@ -43,10 +41,10 @@ public class Main {
         return operation;
     }
 
-    public static double calc(double num1, double num2, char operation){
+    public static double calc(double num1, double num2, char operation) {
         double result;
 
-        switch(operation){
+        switch (operation) {
             case '+':
                 result = num1 + num2;
                 break;
