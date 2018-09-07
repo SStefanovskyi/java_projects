@@ -36,10 +36,6 @@
         <artifactId>spring-webmvc</artifactId>
         <version>4.3.10.RELEASE</version>
     </dependency>
-      <dependency>
-          <groupId></groupId>
-          <artifactId></artifactId>
-      </dependency>
 
   </dependencies>
 
