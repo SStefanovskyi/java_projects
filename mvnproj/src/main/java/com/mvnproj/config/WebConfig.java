@@ -21,7 +21,6 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         freeMarkerViewResolver.setSuffix(".ftl");
         freeMarkerViewResolver.setPrefix("");
         return freeMarkerViewResolver;
-
     }
 
     @Bean
